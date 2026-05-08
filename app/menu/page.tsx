@@ -1,9 +1,36 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
+/* ── Real food images from tacodelmar.com ── */
+const FOOD_IMG: Record<string, string> = {
+  burritos:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-23-RT-scaled.jpg",
+  tacos:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-106_RT-scaled.jpg",
+  "burrito-bowls":
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-151-RT-scaled.jpg",
+  "taco-salads":
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-46_RT-scaled.jpg",
+  nachos:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-229_RT-scaled.jpg",
+  enchiladas:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-161_web_RT-scaled.jpg",
+  quesadillas:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-209-RT-scaled.jpg",
+  snacks:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/02/snack-time-square-1.png",
+  kids:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Ingredients.png",
+  hero:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2021/02/Fish-Tacos_2-small.png?fit=1200%2C900&ssl=1",
+  heroMain:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2026/01/IMG_3249.png?fit=1536%2C775&ssl=1",
+};
 
 /* ── Wave divider ── */
 function WaveDivider({ fill }: { fill: string }) {
@@ -271,38 +298,63 @@ export default function MenuPage() {
       <Header />
       <main className="flex-1">
         {/* ═══════════════════════════════════════
-            MENU HERO
+            MENU HERO — real food photo split
         ═══════════════════════════════════════ */}
-        <section className="relative bg-tdm-dark min-h-[55vh] flex items-center justify-center overflow-hidden pt-16">
-          <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-          {/* Color splashes */}
-          <div className="absolute top-0 left-0 w-1/3 h-full bg-tdm-teal opacity-10" />
-          <div className="absolute top-0 right-0 w-1/4 h-full bg-tdm-orange opacity-10" />
+        <section className="relative bg-tdm-dark min-h-[60vh] flex items-center overflow-hidden pt-16">
+          {/* Full-bleed photo background at 25% opacity */}
+          <div className="absolute inset-0 overflow-hidden">
+            <img
+              src={FOOD_IMG.heroMain}
+              alt=""
+              className="w-full h-full object-cover object-center"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-tdm-dark/80" />
+          </div>
+          <div className="absolute inset-0 bg-dots opacity-15 pointer-events-none" />
 
-          {/* Floating emoji */}
-          <span className="absolute top-24 right-10 text-7xl md:text-9xl animate-float opacity-60 select-none pointer-events-none" aria-hidden="true">🌮</span>
-          <span className="absolute bottom-14 left-10 text-5xl animate-float-slow opacity-50 select-none pointer-events-none" aria-hidden="true" style={{ animationDelay: "1s" }}>🌯</span>
-          <span className="absolute top-1/3 left-1/4 text-4xl animate-float-delay opacity-40 select-none pointer-events-none" aria-hidden="true">🌶️</span>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text */}
+              <div>
+                <span className="inline-block bg-tdm-orange text-white text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+                  Fresh &amp; Delicious
+                </span>
+                <h1 className="font-display text-7xl sm:text-8xl text-white mb-6 leading-tight">
+                  The Menu
+                  <br />
+                  <span className="text-tdm-yellow">🌮</span>
+                </h1>
+                <p className="text-white/75 font-sans text-xl max-w-lg mb-10">
+                  Made your way, every time. Choose your base, pick your coastal
+                  filling, and load it up with fresh toppings.
+                </p>
+                <a
+                  href="https://tacodelmar.olo.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-tdm-orange text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-xl"
+                >
+                  Order Online →
+                </a>
+              </div>
 
-          <div className="relative text-center px-4 py-20 z-10">
-            <span className="inline-block bg-tdm-orange text-white text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-              Fresh &amp; Delicious
-            </span>
-            <h1 className="font-display text-7xl sm:text-8xl lg:text-9xl text-white mb-6 leading-tight">
-              The Menu 🌮
-            </h1>
-            <p className="text-white/70 font-sans text-xl max-w-xl mx-auto mb-10">
-              Made your way, every time. Choose your base, pick your coastal
-              filling, and load it up with fresh toppings.
-            </p>
-            <a
-              href="https://tacodelmar.olo.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-tdm-orange text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-xl"
-            >
-              Order Online →
-            </a>
+              {/* Hero food photo */}
+              <div className="hidden lg:block relative">
+                <div className="rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/15 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src={FOOD_IMG.hero}
+                    alt="Rippin' Fish Tacos"
+                    className="w-full h-[340px] object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-tdm-dark/40 to-transparent" />
+                </div>
+                <div className="absolute -top-4 -right-4 bg-tdm-orange text-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-xl text-center font-display text-xs">
+                  <span className="text-2xl">🐟</span>
+                  <span>Fan Fave</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Wave bottom */}
@@ -388,19 +440,34 @@ export default function MenuPage() {
           >
             <div className="max-w-7xl mx-auto">
               {/* Category header */}
-              <div className="flex flex-col md:flex-row md:items-start gap-6 mb-12">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-5 mb-12">
+                {/* Accent color card */}
                 <div
-                  className={`${cat.accentBg} ${cat.accentText} rounded-3xl px-8 py-6 flex-shrink-0 relative overflow-hidden`}
+                  className={`${cat.accentBg} ${cat.accentText} rounded-3xl px-7 py-6 flex-shrink-0 relative overflow-hidden min-w-[180px]`}
                 >
                   <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
                   <div className="relative">
                     <div className="text-6xl mb-2">{cat.emoji}</div>
-                    <h2 className="font-display text-4xl">{cat.name}</h2>
-                    <p className="opacity-80 font-sans text-lg">{cat.tagline}</p>
+                    <h2 className="font-display text-3xl">{cat.name}</h2>
+                    <p className="opacity-80 font-sans text-base">{cat.tagline}</p>
                   </div>
                 </div>
+
+                {/* Real food photo */}
+                {FOOD_IMG[cat.id] && (
+                  <div className="relative rounded-3xl overflow-hidden flex-shrink-0 w-full sm:w-52 h-44 shadow-lg img-zoom">
+                    <img
+                      src={FOOD_IMG[cat.id]}
+                      alt={cat.name}
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  </div>
+                )}
+
+                {/* Description + CTA */}
                 <div className="flex flex-col justify-between gap-4 flex-1">
-                  <p className="text-tdm-muted font-sans text-lg leading-relaxed">
+                  <p className="text-tdm-muted font-sans text-base leading-relaxed">
                     {cat.desc}
                   </p>
                   <a

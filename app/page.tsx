@@ -1,8 +1,49 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-/* ── Shared SVG wave divider ── */
+/* ── Images ── */
+const IMG = {
+  heroSlider:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2024/04/TDM-Fish-HOMEPAGE-SLIDER-1200x900-1023.png?fit=1200%2C900&ssl=1",
+  heroMain:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2026/01/IMG_3249.png?fit=1536%2C775&ssl=1",
+  fishTacos:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2021/02/Fish-Tacos_2-small.png?fit=1200%2C900&ssl=1",
+  fishTacos2:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/02/Fish-Tacos.png",
+  story:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/shutterstock_47874331-scaled.jpg?fit=1536%2C1222&ssl=1",
+  storyBlock:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Our-story-block.png?fit=1536%2C918&ssl=1",
+  catering:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Catering-block.png?fit=1471%2C1536&ssl=1",
+  mealKits:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/03/meal-kits-block.png?fit=1471%2C1536&ssl=1",
+  rewards:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2022/03/ImageBlock_Rectangle_Template-Rewards-2.png",
+  ingredients:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Ingredients.png",
+  burrito:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-23-RT-scaled.jpg",
+  tacos:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-106_RT-scaled.jpg",
+  bowl:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-151-RT-scaled.jpg",
+  salad:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-46_RT-scaled.jpg",
+  nachos:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-229_RT-scaled.jpg",
+  enchiladas:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-161_web_RT-scaled.jpg",
+  quesadilla:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/01/Taco_Del_Mar_Entrees-209-RT-scaled.jpg",
+  snack:
+    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/02/snack-time-square-1.png",
+};
+
+/* ── Shared wave divider ── */
 function WaveDivider({ fill }: { fill: string }) {
   return (
     <svg
@@ -30,128 +71,114 @@ const categories = [
     emoji: "🌮",
     name: "Tacos",
     desc: "Uno, dos, tres, más?",
-    bg: "bg-tdm-orange",
-    text: "text-white",
     id: "tacos",
+    img: IMG.tacos,
+    tint: "bg-tdm-orange/40",
   },
   {
     emoji: "🌯",
     name: "Burritos",
     desc: "Roll a Fat One!",
-    bg: "bg-tdm-teal",
-    text: "text-white",
     id: "burritos",
+    img: IMG.burrito,
+    tint: "bg-tdm-teal/40",
   },
   {
     emoji: "🥣",
     name: "Burrito Bowls",
     desc: "Pack a Bowl!",
-    bg: "bg-tdm-yellow",
-    text: "text-tdm-dark",
     id: "burrito-bowls",
+    img: IMG.bowl,
+    tint: "bg-yellow-600/40",
   },
   {
     emoji: "🥗",
     name: "Taco Salads",
     desc: "Crispy baked shell",
-    bg: "bg-tdm-green",
-    text: "text-white",
     id: "taco-salads",
+    img: IMG.salad,
+    tint: "bg-tdm-green/40",
   },
   {
     emoji: "🧀",
     name: "Nachos",
     desc: "Loaded with flavor",
-    bg: "bg-tdm-red",
-    text: "text-white",
     id: "nachos",
+    img: IMG.nachos,
+    tint: "bg-tdm-red/40",
   },
   {
     emoji: "🫔",
     name: "Enchiladas",
     desc: "Smothered in goodness",
-    bg: "bg-tdm-teal-dark",
-    text: "text-white",
     id: "enchiladas",
+    img: IMG.enchiladas,
+    tint: "bg-tdm-teal-dark/40",
   },
   {
     emoji: "🫓",
     name: "Quesadillas",
     desc: "Grilled & golden",
-    bg: "bg-amber-500",
-    text: "text-white",
     id: "quesadillas",
+    img: IMG.quesadilla,
+    tint: "bg-amber-600/40",
   },
   {
-    emoji: "🥤",
-    name: "Drinks & Sides",
-    desc: "Complete your meal",
-    bg: "bg-purple-600",
-    text: "text-white",
+    emoji: "🍟",
+    name: "Snacks & Sides",
+    desc: "Little bites, big flavor",
     id: "snacks",
+    img: IMG.snack,
+    tint: "bg-purple-700/40",
   },
 ];
 
 const popularItems = [
   {
-    emoji: "🐟",
     name: "Rippin' Fish Taco",
     desc: "Crispy baked cod, cabbage, pico de gallo & Baja white sauce",
     badge: "🔥 Fan Fave",
     badgeBg: "bg-tdm-orange",
-    sectionBg: "from-tdm-teal to-tdm-teal-dark",
+    img: IMG.fishTacos,
+    gradientFrom: "from-tdm-teal",
+    gradientTo: "to-tdm-teal-dark",
   },
   {
-    emoji: "🌯",
     name: "Mission Burrito",
     desc: "Rice, beans, coastal filling, cheese & pico de gallo",
     badge: "⭐ Most Popular",
     badgeBg: "bg-tdm-yellow text-tdm-dark",
-    sectionBg: "from-tdm-orange to-tdm-orange-dark",
+    img: IMG.burrito,
+    gradientFrom: "from-tdm-orange",
+    gradientTo: "to-tdm-orange-dark",
   },
   {
-    emoji: "🥣",
     name: "Burrito Bowl",
     desc: "All the flavor, none of the tortilla — fully customizable",
     badge: "💪 Keto Friendly",
     badgeBg: "bg-tdm-green",
-    sectionBg: "from-tdm-green to-emerald-800",
+    img: IMG.bowl,
+    gradientFrom: "from-tdm-green",
+    gradientTo: "to-emerald-800",
   },
   {
-    emoji: "🧀",
     name: "Loaded Nachos",
     desc: "Chips, melted cheese, rice, beans, protein & your choice of salsa",
     badge: "🎉 Share it",
     badgeBg: "bg-tdm-red",
-    sectionBg: "from-tdm-red to-rose-900",
+    img: IMG.nachos,
+    gradientFrom: "from-tdm-red",
+    gradientTo: "to-rose-900",
   },
   {
-    emoji: "🐓",
-    name: "Chicken Tinga Taco",
-    desc: "Slow-cooked with chilies & spices — gluten-free",
-    badge: "✅ Gluten-Free",
-    badgeBg: "bg-tdm-teal",
-    sectionBg: "from-amber-500 to-orange-700",
+    name: "Taco Salad",
+    desc: "Crispy in-house baked shell loaded with rice, beans & toppings",
+    badge: "✅ Fresh & Crispy",
+    badgeBg: "bg-tdm-green",
+    img: IMG.salad,
+    gradientFrom: "from-amber-500",
+    gradientTo: "to-orange-700",
   },
-];
-
-const dietBadges = [
-  { label: "🥩 Keto", bg: "bg-red-100 text-red-700 border-red-200" },
-  { label: "🌿 Vegetarian", bg: "bg-green-100 text-green-700 border-green-200" },
-  { label: "🌱 Vegan", bg: "bg-emerald-100 text-emerald-700 border-emerald-200" },
-  { label: "🪨 Paleo", bg: "bg-amber-100 text-amber-700 border-amber-200" },
-  { label: "✅ Gluten-Free", bg: "bg-blue-100 text-blue-700 border-blue-200" },
-  { label: "🥗 Low-Carb", bg: "bg-teal-100 text-teal-700 border-teal-200" },
-  { label: "🌿 Plant-Based", bg: "bg-lime-100 text-lime-700 border-lime-200" },
-];
-
-const ingredientHighlights = [
-  { emoji: "🐟", label: "Fresh Fish" },
-  { emoji: "🐓", label: "Chicken Tinga" },
-  { emoji: "🥑", label: "Guacamole" },
-  { emoji: "🌶️", label: "3 Salsas" },
-  { emoji: "🫘", label: "Beans & Rice" },
-  { emoji: "🧀", label: "Cheese" },
 ];
 
 const stats = [
@@ -175,111 +202,104 @@ export default function HomePage() {
       <Header />
       <main className="flex-1">
         {/* ═══════════════════════════════════════
-            HERO
+            HERO — split with real food photo
         ═══════════════════════════════════════ */}
         <section className="relative min-h-screen flex items-center overflow-hidden bg-tdm-teal pt-16">
-          {/* Dot pattern overlay */}
           <div className="absolute inset-0 bg-dots pointer-events-none" />
 
-          {/* Right-side color block */}
-          <div
-            className="absolute top-0 right-0 h-full w-1/2 bg-tdm-orange opacity-15"
-            style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)" }}
-          />
+          {/* Floating decorations (mobile only — desktop has real photo) */}
+          <span className="lg:hidden absolute top-24 right-4 text-7xl animate-float select-none pointer-events-none opacity-70" aria-hidden="true">🌮</span>
+          <span className="lg:hidden absolute bottom-28 right-1/4 text-4xl animate-float-slow select-none pointer-events-none opacity-55" aria-hidden="true">🌶️</span>
 
-          {/* Floating food decorations */}
-          <span
-            className="absolute top-24 right-6 text-7xl md:text-9xl animate-float select-none pointer-events-none opacity-75"
-            aria-hidden="true"
-          >
-            🌮
-          </span>
-          <span
-            className="absolute bottom-36 right-1/4 text-4xl md:text-6xl animate-float-slow select-none pointer-events-none opacity-60"
-            aria-hidden="true"
-          >
-            🌶️
-          </span>
-          <span
-            className="absolute top-1/3 right-10 text-3xl md:text-5xl animate-float-delay select-none pointer-events-none opacity-50"
-            aria-hidden="true"
-          >
-            🍋
-          </span>
-          <span
-            className="absolute bottom-20 left-6 text-4xl animate-float-delay2 select-none pointer-events-none opacity-45"
-            aria-hidden="true"
-          >
-            🌿
-          </span>
-          <span
-            className="absolute top-36 left-1/4 text-2xl animate-float select-none pointer-events-none opacity-40"
-            aria-hidden="true"
-          >
-            ⭐
-          </span>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-            <div className="max-w-2xl">
-              {/* New item badge */}
-              <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 animate-pulse-badge shadow-md">
-                🆕 NEW Rippin&apos; Fish — juicier &amp; crispier than ever!
+              {/* Left: text + CTAs */}
+              <div>
+                <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 animate-pulse-badge shadow-md">
+                  🆕 NEW Rippin&apos; Fish — juicier &amp; crispier than ever!
+                </div>
+                <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-white leading-tight mb-6">
+                  Born on
+                  <br />
+                  <span className="text-tdm-yellow">the Beach.</span>
+                  <br />
+                  Live Baja!
+                </h1>
+                <p className="text-white/85 font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+                  Fresh, delicious Mexican food made your way. Tacos, burritos,
+                  bowls and more — real coastal flavor in every bite.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://tacodelmar.olo.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-tdm-orange hover:bg-tdm-orange-dark text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-2xl"
+                  >
+                    Order Now 🌮
+                  </a>
+                  <Link
+                    href="/menu"
+                    className="bg-white/15 hover:bg-white/25 border-2 border-white/50 text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop backdrop-blur-sm"
+                  >
+                    View Menu →
+                  </Link>
+                </div>
+                <div className="flex flex-wrap gap-8 mt-14">
+                  {stats.map((s) => (
+                    <div key={s.num}>
+                      <div className="font-display text-3xl text-tdm-yellow">{s.num}</div>
+                      <div className="text-white/65 text-xs font-sans uppercase tracking-wider">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-white leading-tight mb-6">
-                Born on
-                <br />
-                <span className="text-tdm-yellow">the Beach.</span>
-                <br />
-                Live Baja!
-              </h1>
+              {/* Right: real food photo */}
+              <div className="hidden lg:block relative">
+                {/* Main photo frame */}
+                <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src={IMG.heroSlider}
+                    alt="Taco Del Mar fish taco"
+                    className="w-full h-[420px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-tdm-teal/50 to-transparent" />
+                </div>
 
-              <p className="text-white/85 font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
-                Fresh, delicious Mexican food made your way. Tacos, burritos,
-                bowls and more — real coastal flavor in every bite.
-              </p>
+                {/* Floating badge — top right */}
+                <div className="absolute -top-5 -right-5 z-20 bg-tdm-yellow text-tdm-dark rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-xl text-center">
+                  <span className="text-2xl">🌮</span>
+                  <span className="font-display text-xs leading-tight">Made<br />Fresh!</span>
+                </div>
 
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://tacodelmar.olo.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-tdm-orange hover:bg-tdm-orange-dark text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-2xl"
-                >
-                  Order Now 🌮
-                </a>
-                <Link
-                  href="/menu"
-                  className="bg-white/15 hover:bg-white/25 border-2 border-white/50 text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop backdrop-blur-sm"
-                >
-                  View Menu →
-                </Link>
-              </div>
+                {/* Floating badge — bottom left */}
+                <div className="absolute -bottom-5 -left-5 z-20 bg-tdm-orange text-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-xl text-center">
+                  <span className="text-xl">🔥</span>
+                  <span className="font-display text-[10px] leading-tight">Order<br />Now</span>
+                </div>
 
-              {/* Stats strip */}
-              <div className="flex flex-wrap gap-8 mt-14">
-                {stats.map((s) => (
-                  <div key={s.num}>
-                    <div className="font-display text-3xl text-tdm-yellow">
-                      {s.num}
-                    </div>
-                    <div className="text-white/65 text-xs font-sans uppercase tracking-wider">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
+                {/* Secondary smaller photo */}
+                <div className="absolute -bottom-8 right-8 z-0 w-36 h-36 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/30 transform -rotate-3">
+                  <img
+                    src={IMG.ingredients}
+                    alt="Fresh ingredients"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Torn bottom edge */}
+          {/* Torn bottom */}
           <div className="absolute bottom-0 left-0 right-0 z-10">
             <WaveDivider fill="#FFFDF5" />
           </div>
         </section>
 
         {/* ═══════════════════════════════════════
-            CATEGORIES
+            CATEGORIES — real food photography
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-cream py-24 px-4">
           <div className="max-w-7xl mx-auto">
@@ -291,8 +311,8 @@ export default function HomePage() {
                 What are you feeling?
               </h2>
               <p className="text-tdm-muted font-sans text-lg max-w-2xl mx-auto">
-                From tacos to bowls to loaded nachos — we&apos;ve got something
-                for everyone. Build it your way.
+                From tacos to bowls to loaded nachos — build it your way with your
+                choice of coastal filling.
               </p>
             </div>
 
@@ -301,21 +321,27 @@ export default function HomePage() {
                 <Link
                   key={cat.id}
                   href={`/menu#${cat.id}`}
-                  className={`${cat.bg} ${cat.text} rounded-3xl p-6 card-lift group cursor-pointer block`}
+                  className="relative rounded-3xl overflow-hidden h-52 sm:h-56 card-lift group block"
                 >
-                  <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                    {cat.emoji}
+                  {/* Food photo */}
+                  <img
+                    src={cat.img}
+                    alt={cat.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* Dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  {/* Brand color tint */}
+                  <div className={`absolute inset-0 ${cat.tint}`} />
+                  {/* Text */}
+                  <div className="absolute bottom-0 left-0 p-4 text-white">
+                    <div className="text-3xl mb-1">{cat.emoji}</div>
+                    <h3 className="font-display text-xl leading-tight">{cat.name}</h3>
+                    <p className="text-white/75 text-xs font-sans mt-0.5">{cat.desc}</p>
                   </div>
-                  <h3 className="font-display text-xl mb-1">{cat.name}</h3>
-                  <p
-                    className={`text-sm font-sans mb-4 ${
-                      cat.text === "text-white" ? "opacity-75" : "opacity-65"
-                    }`}
-                  >
-                    {cat.desc}
-                  </p>
-                  <div className="text-sm font-bold opacity-90 group-hover:translate-x-1 transition-transform duration-200">
-                    View items →
+                  {/* Arrow on hover */}
+                  <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white font-bold text-sm">
+                    →
                   </div>
                 </Link>
               ))}
@@ -324,14 +350,12 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            BRAND STORY
+            BRAND STORY — with real story image
         ═══════════════════════════════════════ */}
         <section className="relative bg-tdm-teal py-28 px-4 overflow-hidden">
-          {/* Top torn edge */}
           <div className="absolute top-0 left-0 right-0 z-10 rotate-180">
             <WaveDivider fill="#FFFDF5" />
           </div>
-
           <div className="absolute inset-0 bg-dots pointer-events-none" />
 
           <div className="relative max-w-7xl mx-auto z-20">
@@ -347,73 +371,62 @@ export default function HomePage() {
                 </h2>
                 <p className="text-white/80 font-sans text-lg leading-relaxed mb-5">
                   We brought the laid-back vibes of Baja California straight to
-                  your neighborhood. Fresh ingredients, bold coastal flavors,
-                  and made-your-way customization — that&apos;s the Taco Del Mar
-                  way.
+                  your neighborhood. Fresh ingredients, bold coastal flavors, and
+                  made-your-way customization — that&apos;s the Taco Del Mar way.
                 </p>
                 <p className="text-white/75 font-sans text-base leading-relaxed mb-8">
-                  Keto? Vegan? Gluten-free? Paleo? We&apos;ve got you covered. Every
-                  item is fully customizable with your choice of protein, salsa,
-                  and toppings.
+                  Keto? Vegan? Gluten-free? Paleo? Every item is fully
+                  customizable with your choice of protein, salsa, and toppings.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    "🌊 Beach-Inspired",
-                    "🌿 Fresh Daily",
-                    "💚 Made Your Way",
-                    "🌶️ Bold Flavor",
-                  ].map((badge) => (
-                    <span
-                      key={badge}
-                      className="bg-white/15 border border-white/30 text-white text-sm font-bold font-sans px-4 py-2 rounded-full"
-                    >
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {["🌊 Beach-Inspired", "🌿 Fresh Daily", "💚 Made Your Way", "🌶️ Bold Flavor"].map((badge) => (
+                    <span key={badge} className="bg-white/15 border border-white/30 text-white text-sm font-bold font-sans px-4 py-2 rounded-full">
                       {badge}
                     </span>
                   ))}
                 </div>
+                <a
+                  href="https://tacodelmar.com/story/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-tdm-yellow text-tdm-dark font-bold font-sans px-7 py-3 rounded-full btn-pop shadow-lg"
+                >
+                  Read Our Story →
+                </a>
               </div>
 
-              {/* Visual panel */}
+              {/* Real story image */}
               <div className="relative">
-                <div className="bg-tdm-teal-dark rounded-3xl p-8 overflow-hidden relative shadow-2xl">
-                  <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-                  <div className="relative text-center">
-                    <div className="text-8xl mb-6 animate-float inline-block">
-                      🌮
-                    </div>
-                    <p className="font-display text-2xl text-white mb-6">
-                      Choice Ingredients
-                    </p>
-                    <div className="grid grid-cols-3 gap-3">
-                      {ingredientHighlights.map((item) => (
-                        <div
-                          key={item.label}
-                          className="bg-white/10 hover:bg-white/20 rounded-2xl p-3 text-center transition-colors"
-                        >
-                          <div className="text-2xl mb-1">{item.emoji}</div>
-                          <div className="text-white/80 text-xs font-sans font-semibold">
-                            {item.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-white/60 text-xs font-sans mt-5">
-                      + Guac, Queso, Pico de Gallo &amp; more
-                    </p>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
+                  <img
+                    src={IMG.story}
+                    alt="Taco Del Mar Story — Baja beach vibes"
+                    className="w-full h-[420px] object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-tdm-teal-dark/50 to-transparent" />
+                  <div className="absolute bottom-5 left-5 text-white">
+                    <span className="font-display text-2xl drop-shadow-lg">Born on the Beach 🌊</span>
                   </div>
+                </div>
+                {/* Our story block inset */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/30 transform rotate-3">
+                  <img
+                    src={IMG.storyBlock}
+                    alt="Surf board and beach lifestyle"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom torn edge */}
           <div className="absolute bottom-0 left-0 right-0 z-10">
             <WaveDivider fill="#FFFDF5" />
           </div>
         </section>
 
         {/* ═══════════════════════════════════════
-            POPULAR ITEMS
+            POPULAR ITEMS — real food photos
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-cream py-24 px-4">
           <div className="max-w-7xl mx-auto">
@@ -422,9 +435,7 @@ export default function HomePage() {
                 <span className="inline-block bg-tdm-orange text-white text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-4">
                   Fan Favorites
                 </span>
-                <h2 className="font-display text-5xl md:text-6xl text-tdm-dark">
-                  Popular picks
-                </h2>
+                <h2 className="font-display text-5xl md:text-6xl text-tdm-dark">Popular picks</h2>
               </div>
               <Link
                 href="/menu"
@@ -434,35 +445,41 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Horizontal scroll */}
+            {/* Horizontal scroll cards with real photos */}
             <div className="flex gap-5 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4">
               {popularItems.map((item) => (
                 <div
                   key={item.name}
-                  className={`bg-gradient-to-br ${item.sectionBg} rounded-3xl p-6 min-w-[268px] max-w-[290px] flex-shrink-0 card-lift text-white relative overflow-hidden`}
+                  className="rounded-3xl overflow-hidden min-w-[280px] max-w-[300px] flex-shrink-0 card-lift shadow-lg"
                 >
-                  <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-                  <div className="relative flex flex-col h-full">
-                    <span
-                      className={`inline-block ${item.badgeBg} text-xs font-bold font-sans px-3 py-1.5 rounded-full mb-5 self-start`}
-                    >
+                  {/* Food photo */}
+                  <div className="relative h-48">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <span className={`absolute top-3 left-3 ${item.badgeBg} text-xs font-bold font-sans px-3 py-1.5 rounded-full shadow-md`}>
                       {item.badge}
                     </span>
-                    <div className="text-7xl mb-4 animate-float inline-block">
-                      {item.emoji}
+                  </div>
+
+                  {/* Content */}
+                  <div className={`bg-gradient-to-br ${item.gradientFrom} ${item.gradientTo} p-5 text-white relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
+                    <div className="relative">
+                      <h3 className="font-display text-2xl mb-2 leading-tight">{item.name}</h3>
+                      <p className="text-white/80 text-sm font-sans leading-relaxed mb-5">{item.desc}</p>
+                      <a
+                        href="https://tacodelmar.olo.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-white/20 hover:bg-white/35 text-white font-bold font-sans px-5 py-2.5 rounded-full text-sm transition-colors"
+                      >
+                        Order Now →
+                      </a>
                     </div>
-                    <h3 className="font-display text-2xl mb-2">{item.name}</h3>
-                    <p className="text-white/80 text-sm font-sans leading-relaxed mb-6 flex-1">
-                      {item.desc}
-                    </p>
-                    <a
-                      href="https://tacodelmar.olo.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-white/20 hover:bg-white/35 text-white font-bold font-sans px-5 py-2.5 rounded-full text-sm transition-colors self-start"
-                    >
-                      Order Now →
-                    </a>
                   </div>
                 </div>
               ))}
@@ -475,19 +492,21 @@ export default function HomePage() {
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-sand py-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="font-display text-4xl md:text-5xl text-tdm-dark mb-4">
-              Eating your way?
-            </h2>
+            <h2 className="font-display text-4xl md:text-5xl text-tdm-dark mb-4">Eating your way?</h2>
             <p className="text-tdm-muted font-sans text-lg mb-10 max-w-2xl mx-auto">
-              Every item is fully customizable to fit your lifestyle. We make
-              eating well easy and delicious.
+              Every item is fully customizable to fit your lifestyle.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {dietBadges.map((d) => (
-                <span
-                  key={d.label}
-                  className={`${d.bg} border text-sm font-bold font-sans px-5 py-2.5 rounded-full`}
-                >
+              {[
+                { label: "🥩 Keto", bg: "bg-red-100 text-red-700 border-red-200" },
+                { label: "🌿 Vegetarian", bg: "bg-green-100 text-green-700 border-green-200" },
+                { label: "🌱 Vegan", bg: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+                { label: "🪨 Paleo", bg: "bg-amber-100 text-amber-700 border-amber-200" },
+                { label: "✅ Gluten-Free", bg: "bg-blue-100 text-blue-700 border-blue-200" },
+                { label: "🥗 Low-Carb", bg: "bg-teal-100 text-teal-700 border-teal-200" },
+                { label: "🌿 Plant-Based", bg: "bg-lime-100 text-lime-700 border-lime-200" },
+              ].map((d) => (
+                <span key={d.label} className={`${d.bg} border text-sm font-bold font-sans px-5 py-2.5 rounded-full`}>
                   {d.label}
                 </span>
               ))}
@@ -500,29 +519,20 @@ export default function HomePage() {
         ═══════════════════════════════════════ */}
         <section className="relative bg-tdm-orange py-28 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-          <span
-            className="absolute -right-10 top-1/2 -translate-y-1/2 text-[220px] opacity-15 select-none pointer-events-none"
-            aria-hidden="true"
-          >
-            🌮
-          </span>
-          <span
-            className="absolute -left-10 top-1/2 -translate-y-1/2 text-[160px] opacity-15 select-none pointer-events-none -rotate-12"
-            aria-hidden="true"
-          >
-            🌯
-          </span>
+          {/* Real food photo as background fade */}
+          <div className="absolute inset-0 opacity-10 overflow-hidden">
+            <img src={IMG.fishTacos2} alt="" className="w-full h-full object-cover" aria-hidden="true" />
+          </div>
+          <span className="absolute -right-10 top-1/2 -translate-y-1/2 text-[220px] opacity-10 select-none pointer-events-none" aria-hidden="true">🌮</span>
+          <span className="absolute -left-10 top-1/2 -translate-y-1/2 text-[160px] opacity-10 select-none pointer-events-none -rotate-12" aria-hidden="true">🌯</span>
 
           <div className="relative max-w-4xl mx-auto text-center z-10">
             <div className="inline-block bg-white/20 border border-white/30 text-white text-sm font-bold font-sans px-4 py-2 rounded-full mb-7">
               🔥 Ready in minutes
             </div>
-            <h2 className="font-display text-6xl md:text-7xl text-white mb-6">
-              Ready for tacos?
-            </h2>
+            <h2 className="font-display text-6xl md:text-7xl text-white mb-6">Ready for tacos?</h2>
             <p className="text-white/85 font-sans text-xl mb-10 max-w-xl mx-auto">
-              Order online for pickup or delivery. Skip the wait — your Baja
-              feast is just a click away.
+              Order online for pickup or delivery. Skip the wait — your Baja feast is just a click away.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -544,7 +554,7 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            REWARDS
+            REWARDS — with real phone image
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-yellow py-24 px-4">
           <div className="max-w-7xl mx-auto">
@@ -554,15 +564,17 @@ export default function HomePage() {
                   Loyalty Program
                 </span>
                 <h2 className="font-display text-5xl md:text-6xl text-tdm-dark mb-6">
-                  Rippin&apos;
-                  <br />
-                  Rewards 🏄
+                  Rippin&apos; Rewards 🏄
                 </h2>
                 <p className="text-tdm-charcoal font-sans text-lg leading-relaxed mb-8">
-                  Earn points every time you order. Redeem them for free food.
-                  Get exclusive app-only deals and be the first to know about
-                  new menu items.
+                  Earn points every time you order. Redeem them for free food. Get
+                  exclusive app-only deals and be the first to know about new menu items.
                 </p>
+                <ul className="space-y-2 mb-8">
+                  {rewardsBenefits.map((item) => (
+                    <li key={item} className="text-tdm-charcoal font-sans">{item}</li>
+                  ))}
+                </ul>
                 <a
                   href="https://tacodelmar.com/rippinrewards/"
                   target="_blank"
@@ -573,20 +585,17 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="bg-tdm-dark rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-dots opacity-10 pointer-events-none" />
-                <div className="relative">
-                  <div className="text-6xl mb-5">🏆</div>
-                  <h3 className="font-display text-3xl mb-5">
-                    Earn. Redeem. Repeat.
-                  </h3>
-                  <ul className="space-y-3">
-                    {rewardsBenefits.map((item) => (
-                      <li key={item} className="text-white/80 font-sans">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+              {/* Real rewards image */}
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src={IMG.rewards}
+                    alt="Rippin' Rewards loyalty app"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="absolute -top-4 -left-4 bg-tdm-dark text-white rounded-2xl px-4 py-3 shadow-xl font-display text-sm">
+                  🏆 Earn on every order
                 </div>
               </div>
             </div>
@@ -594,47 +603,56 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            CATERING
+            CATERING — with real catering images
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-cream py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-r from-tdm-teal to-tdm-teal-dark rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl">
+            <div className="bg-gradient-to-r from-tdm-teal to-tdm-teal-dark rounded-3xl overflow-hidden relative shadow-xl">
               <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-              <span
-                className="absolute -right-6 -top-6 text-[120px] opacity-20 select-none pointer-events-none"
-                aria-hidden="true"
-              >
-                🎉
-              </span>
-              <div className="relative z-10">
-                <span className="inline-block bg-tdm-yellow text-tdm-dark text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-4">
-                  Catering
-                </span>
-                <h2 className="font-display text-4xl md:text-5xl text-white mb-3">
-                  Feed the crew!
-                </h2>
-                <p className="text-white/80 font-sans text-lg max-w-md">
-                  Meal kits for 4–8 people, full catering packages, and
-                  Build-Your-Own Taco Bars. Perfect for any event.
-                </p>
-              </div>
-              <div className="relative z-10 flex flex-col gap-3 flex-shrink-0">
-                <a
-                  href="https://tacodelmar.com/catering/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-tdm-teal font-bold font-sans px-8 py-4 rounded-full btn-pop text-center whitespace-nowrap shadow-lg"
-                >
-                  Catering Info →
-                </a>
-                <a
-                  href="https://tacodelmar.olo.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-tdm-orange text-white font-bold font-sans px-8 py-4 rounded-full btn-pop text-center whitespace-nowrap"
-                >
-                  Order Meal Kits 🌮
-                </a>
+              <div className="grid grid-cols-1 md:grid-cols-5 items-center">
+                {/* Text + CTAs */}
+                <div className="md:col-span-3 p-10 md:p-14 relative z-10">
+                  <span className="inline-block bg-tdm-yellow text-tdm-dark text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+                    Catering
+                  </span>
+                  <h2 className="font-display text-4xl md:text-5xl text-white mb-3">Feed the crew!</h2>
+                  <p className="text-white/80 font-sans text-lg max-w-md mb-8">
+                    Meal kits for 4–8 people, full catering packages, and Build-Your-Own
+                    Taco Bars. Perfect for any event.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="https://tacodelmar.com/catering/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-tdm-teal font-bold font-sans px-7 py-3 rounded-full btn-pop text-center shadow-lg"
+                    >
+                      Catering Info →
+                    </a>
+                    <a
+                      href="https://tacodelmar.olo.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-tdm-orange text-white font-bold font-sans px-7 py-3 rounded-full btn-pop text-center"
+                    >
+                      Order Meal Kits 🌮
+                    </a>
+                  </div>
+                </div>
+
+                {/* Catering images */}
+                <div className="md:col-span-2 flex gap-2 p-4 md:pr-6">
+                  <img
+                    src={IMG.catering}
+                    alt="Catering mexican food"
+                    className="w-1/2 rounded-2xl object-cover h-48 md:h-64 shadow-lg"
+                  />
+                  <img
+                    src={IMG.mealKits}
+                    alt="Meal kits"
+                    className="w-1/2 rounded-2xl object-cover h-48 md:h-64 shadow-lg mt-4"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -647,13 +665,10 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-5xl mb-5">📍</div>
             <h2 className="font-display text-5xl md:text-6xl text-tdm-dark mb-4">
-              Find Your
-              <br />
-              Taco Del Mar
+              Find Your<br />Taco Del Mar
             </h2>
             <p className="text-tdm-muted font-sans text-lg mb-10">
-              We&apos;re closer than you think. Find the nearest location and get
-              your Baja fix today.
+              We&apos;re closer than you think. Find the nearest location and get your Baja fix today.
             </p>
             <div className="bg-white rounded-3xl shadow-lg p-8 max-w-xl mx-auto">
               <div className="flex gap-3">
