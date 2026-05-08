@@ -160,81 +160,62 @@ export default function HomePage() {
         {/* ═══════════════════════════════════════
             HERO
         ═══════════════════════════════════════ */}
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-tdm-teal pt-16">
+        <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
+          {/* Edge-to-edge background photo */}
+          <img
+            src={IMG.heroSlider}
+            alt="Taco Del Mar fish taco"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Dark teal overlay for readability */}
+          <div className="absolute inset-0 bg-tdm-teal/70" />
           <div className="absolute inset-0 bg-dots pointer-events-none" />
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Center-aligned content */}
+          <div className="relative w-full z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 py-24">
+            <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 shadow-md">
+              NEW — Rippin&apos; Fish: juicier &amp; crispier than ever!
+            </div>
+            <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-white leading-tight mb-6">
+              Born on{" "}
+              <span className="text-tdm-yellow">the Beach.</span>
+              <br />
+              Live Baja!
+            </h1>
+            <p className="text-white/85 font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+              Fresh, delicious Mexican food made your way. Tacos, burritos,
+              bowls and more — real coastal flavor in every bite.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://tacodelmar.olo.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-tdm-orange hover:bg-tdm-orange-dark text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-2xl"
+              >
+                Order Now
+              </a>
+              <Link
+                href="/menu"
+                className="bg-white/15 hover:bg-white/25 border-2 border-white/50 text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop backdrop-blur-sm"
+              >
+                View Menu →
+              </Link>
+            </div>
 
-              {/* Left: text + CTAs */}
-              <div>
-                <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 shadow-md">
-                  NEW — Rippin&apos; Fish: juicier &amp; crispier than ever!
+            {/* Stats strip */}
+            <div className="flex flex-wrap justify-center gap-10 mt-16">
+              {stats.map((s) => (
+                <div key={s.num} className="text-center">
+                  <div className="font-display text-3xl text-tdm-yellow">{s.num}</div>
+                  <div className="text-white/65 text-xs font-sans uppercase tracking-wider">{s.label}</div>
                 </div>
-                <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-white leading-tight mb-6">
-                  Born on
-                  <br />
-                  <span className="text-tdm-yellow">the Beach.</span>
-                  <br />
-                  Live Baja!
-                </h1>
-                <p className="text-white/85 font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
-                  Fresh, delicious Mexican food made your way. Tacos, burritos,
-                  bowls and more — real coastal flavor in every bite.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="https://tacodelmar.olo.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-tdm-orange hover:bg-tdm-orange-dark text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-2xl"
-                  >
-                    Order Now
-                  </a>
-                  <Link
-                    href="/menu"
-                    className="bg-white/15 hover:bg-white/25 border-2 border-white/50 text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop backdrop-blur-sm"
-                  >
-                    View Menu →
-                  </Link>
-                </div>
+              ))}
+            </div>
 
-                {/* Stats strip */}
-                <div className="flex flex-wrap gap-8 mt-14">
-                  {stats.map((s) => (
-                    <div key={s.num}>
-                      <div className="font-display text-3xl text-tdm-yellow">{s.num}</div>
-                      <div className="text-white/65 text-xs font-sans uppercase tracking-wider">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right: real food photo */}
-              <div className="hidden lg:block relative">
-                <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <img
-                    src={IMG.heroSlider}
-                    alt="Taco Del Mar fish taco"
-                    className="w-full h-[420px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-tdm-teal/50 to-transparent" />
-                </div>
-
-                {/* "Made Fresh" badge */}
-                <div className="absolute -top-5 -right-5 z-20 bg-tdm-yellow text-tdm-dark rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-xl text-center">
-                  <span className="font-display text-sm leading-tight px-2">Made Fresh!</span>
-                </div>
-
-                {/* Ingredients inset */}
-                <div className="absolute -bottom-8 right-8 z-0 w-36 h-36 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/30 transform -rotate-3">
-                  <img
-                    src={IMG.ingredients}
-                    alt="Fresh ingredients"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+            {/* Made Fresh badge */}
+            <div className="absolute top-24 right-8 sm:right-16 bg-tdm-yellow text-tdm-dark rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-xl text-center">
+              <span className="font-display text-sm leading-tight px-2">Made Fresh!</span>
             </div>
           </div>
 
