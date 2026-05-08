@@ -64,7 +64,6 @@ interface MenuItem {
 interface MenuCategory {
   id: string;
   name: string;
-  emoji: string;
   tagline: string;
   accentBg: string;
   accentText: string;
@@ -77,7 +76,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "burritos",
     name: "Burritos",
-    emoji: "🌯",
     tagline: "Roll a Fat One!",
     accentBg: "bg-tdm-teal",
     accentText: "text-white",
@@ -95,14 +93,13 @@ const menuCategories: MenuCategory[] = [
   {
     id: "tacos",
     name: "Tacos",
-    emoji: "🌮",
     tagline: "Uno, dos, tres, más?",
     accentBg: "bg-tdm-orange",
     accentText: "text-white",
     rowBg: "bg-tdm-sand",
     desc: "Crispy or soft corn tortillas loaded with your choice of coastal filling, cabbage, pico de gallo, and Baja white sauce. Order one or a whole pile.",
     items: [
-      { name: "Rippin' Fish Taco", desc: "Crispy baked cod, cabbage, pico de gallo & Baja sauce", tags: ["🔥 Fan Fave"] },
+      { name: "Rippin' Fish Taco", desc: "Crispy baked cod, cabbage, pico de gallo & Baja sauce", tags: ["Fan Fave"] },
       { name: "Chicken Tinga Taco", desc: "Slow-cooked chicken with chilies & spices", tags: ["GF"] },
       { name: "Carnitas Taco", desc: "Slow-cooked shredded pork carnitas", tags: ["GF"] },
       { name: "Ground Beef Taco", desc: "Seasoned ground beef with spices", tags: ["GF"] },
@@ -113,7 +110,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "burrito-bowls",
     name: "Burrito Bowls",
-    emoji: "🥣",
     tagline: "Pack a Bowl!",
     accentBg: "bg-yellow-500",
     accentText: "text-white",
@@ -131,7 +127,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "taco-salads",
     name: "Taco Salads",
-    emoji: "🥗",
     tagline: "Crispy & Fresh",
     accentBg: "bg-tdm-green",
     accentText: "text-white",
@@ -148,7 +143,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "nachos",
     name: "Loaded Nachos",
-    emoji: "🧀",
     tagline: "Go Big!",
     accentBg: "bg-tdm-red",
     accentText: "text-white",
@@ -165,7 +159,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "enchiladas",
     name: "Enchiladas",
-    emoji: "🫔",
     tagline: "Smothered in Goodness",
     accentBg: "bg-tdm-teal-dark",
     accentText: "text-white",
@@ -182,7 +175,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "quesadillas",
     name: "Quesadillas",
-    emoji: "🫓",
     tagline: "Grilled & Golden",
     accentBg: "bg-amber-500",
     accentText: "text-white",
@@ -199,7 +191,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "snacks",
     name: "Snack Attack",
-    emoji: "🍟",
     tagline: "Little bites, big flavor",
     accentBg: "bg-purple-600",
     accentText: "text-white",
@@ -217,7 +208,6 @@ const menuCategories: MenuCategory[] = [
   {
     id: "kids",
     name: "Los Niños",
-    emoji: "👶",
     tagline: "Little Baja fans",
     accentBg: "bg-pink-500",
     accentText: "text-white",
@@ -232,21 +222,21 @@ const menuCategories: MenuCategory[] = [
 ];
 
 const proteins = [
-  { emoji: "🐓", name: "Chicken Tinga", badges: ["GF"] },
-  { emoji: "🐟", name: "Rippin' Fish", badges: [] },
-  { emoji: "🥩", name: "Ground Beef", badges: ["GF"] },
-  { emoji: "🐷", name: "Carnitas", badges: ["GF"] },
-  { emoji: "🦐", name: "Crispy Shrimp", badges: ["GF"] },
-  { emoji: "🥑", name: "Vegetarian", badges: ["V", "VG", "GF"] },
-  { emoji: "🐄", name: "Shredded Beef", badges: ["GF", "Select locations"] },
+  { name: "Chicken Tinga", badges: ["GF"] },
+  { name: "Rippin' Fish", badges: [] },
+  { name: "Ground Beef", badges: ["GF"] },
+  { name: "Carnitas", badges: ["GF"] },
+  { name: "Crispy Shrimp", badges: ["GF"] },
+  { name: "Vegetarian", badges: ["V", "VG", "GF"] },
+  { name: "Shredded Beef", badges: ["GF", "Select locations"] },
 ];
 
 const salsas = [
-  { name: "Tangy Verde", heat: "Mild", emoji: "🟢" },
-  { name: "Roasted Chipotle", heat: "Medium", emoji: "🟡" },
-  { name: "Mango Salsa", heat: "Medium", emoji: "🟠" },
-  { name: "Habanero", heat: "Hot 🔥", emoji: "🔴" },
-  { name: "Pico de Gallo", heat: "Fresh Daily", emoji: "🍅" },
+  { name: "Tangy Verde", heat: "Mild" },
+  { name: "Roasted Chipotle", heat: "Medium" },
+  { name: "Mango Salsa", heat: "Medium" },
+  { name: "Habanero", heat: "Hot" },
+  { name: "Pico de Gallo", heat: "Fresh Daily" },
 ];
 
 const tagColors: Record<string, string> = {
@@ -254,7 +244,7 @@ const tagColors: Record<string, string> = {
   "GF*": "bg-blue-100 text-blue-700",
   V: "bg-green-100 text-green-700",
   VG: "bg-emerald-100 text-emerald-700",
-  "🔥 Fan Fave": "bg-orange-100 text-orange-700",
+  "Fan Fave": "bg-orange-100 text-orange-700",
   Popular: "bg-orange-100 text-orange-700",
   Keto: "bg-red-100 text-red-700",
   "Select locations": "bg-gray-100 text-gray-600",
@@ -322,8 +312,6 @@ export default function MenuPage() {
                 </span>
                 <h1 className="font-display text-7xl sm:text-8xl text-white mb-6 leading-tight">
                   The Menu
-                  <br />
-                  <span className="text-tdm-yellow">🌮</span>
                 </h1>
                 <p className="text-white/75 font-sans text-xl max-w-lg mb-10">
                   Made your way, every time. Choose your base, pick your coastal
@@ -350,7 +338,6 @@ export default function MenuPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-tdm-dark/40 to-transparent" />
                 </div>
                 <div className="absolute -top-4 -right-4 bg-tdm-orange text-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-xl text-center font-display text-xs">
-                  <span className="text-2xl">🐟</span>
                   <span>Fan Fave</span>
                 </div>
               </div>
@@ -379,7 +366,6 @@ export default function MenuPage() {
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
-                  <span>{cat.emoji}</span>
                   <span>{cat.name}</span>
                 </button>
               ))}
@@ -393,7 +379,7 @@ export default function MenuPage() {
         <section className="bg-tdm-cream py-14 px-4 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <h2 className="font-display text-3xl text-tdm-dark mb-2 text-center">
-              🌊 Coastal Fillings
+              Coastal Fillings
             </h2>
             <p className="text-tdm-muted font-sans text-center mb-8">
               Choose your protein — mix and match across any item
@@ -404,7 +390,6 @@ export default function MenuPage() {
                   key={p.name}
                   className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <div className="text-3xl mb-2">{p.emoji}</div>
                   <div className="font-bold font-sans text-xs text-tdm-dark leading-tight mb-2">
                     {p.name}
                   </div>
@@ -447,7 +432,6 @@ export default function MenuPage() {
                 >
                   <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
                   <div className="relative">
-                    <div className="text-6xl mb-2">{cat.emoji}</div>
                     <h2 className="font-display text-3xl">{cat.name}</h2>
                     <p className="opacity-80 font-sans text-base">{cat.tagline}</p>
                   </div>
@@ -538,7 +522,7 @@ export default function MenuPage() {
           <div className="relative max-w-7xl mx-auto z-20">
             <div className="text-center mb-12">
               <h2 className="font-display text-5xl text-white mb-4">
-                🌶️ Pick Your Heat
+                Pick Your Heat
               </h2>
               <p className="text-white/80 font-sans text-lg">
                 5 salsas. Mild to wild. All made in-house.
@@ -550,7 +534,6 @@ export default function MenuPage() {
                   key={salsa.name}
                   className="bg-white/15 border border-white/30 hover:bg-white/25 rounded-2xl px-6 py-5 text-white text-center min-w-[150px] transition-colors"
                 >
-                  <div className="text-3xl mb-2">{salsa.emoji}</div>
                   <div className="font-display text-xl mb-1">{salsa.name}</div>
                   <div className="text-white/70 text-sm font-sans">{salsa.heat}</div>
                 </div>
@@ -607,18 +590,6 @@ export default function MenuPage() {
         ═══════════════════════════════════════ */}
         <section className="relative bg-tdm-orange py-28 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-          <span
-            className="absolute -right-12 -top-8 text-[200px] opacity-15 select-none pointer-events-none rotate-12"
-            aria-hidden="true"
-          >
-            🌮
-          </span>
-          <span
-            className="absolute -left-12 bottom-0 text-[150px] opacity-15 select-none pointer-events-none -rotate-6"
-            aria-hidden="true"
-          >
-            🌯
-          </span>
 
           <div className="relative max-w-4xl mx-auto text-center z-10">
             <h2 className="font-display text-6xl md:text-7xl text-white mb-6">
@@ -635,7 +606,7 @@ export default function MenuPage() {
                 rel="noopener noreferrer"
                 className="bg-white text-tdm-orange font-bold font-sans px-10 py-4 rounded-full text-xl btn-pop shadow-2xl"
               >
-                Order Online Now 🌮
+                Order Online Now
               </a>
               <a
                 href="https://tacodelmar.com/locations/"
@@ -643,7 +614,7 @@ export default function MenuPage() {
                 rel="noopener noreferrer"
                 className="bg-white/20 border-2 border-white text-white font-bold font-sans px-10 py-4 rounded-full text-xl btn-pop"
               >
-                📍 Find a Location
+                Find a Location
               </a>
             </div>
             <div className="mt-8">

@@ -8,7 +8,7 @@ const navLinks = [
   { href: "/menu", label: "Menu" },
   { href: "https://tacodelmar.com/locations/", label: "Locations", external: true },
   { href: "https://tacodelmar.com/catering/", label: "Catering", external: true },
-  { href: "https://tacodelmar.com/rippinrewards/", label: "Rewards 🏄", external: true },
+  { href: "https://tacodelmar.com/rippinrewards/", label: "Rewards", external: true },
   { href: "https://tacodelmar.com/story/", label: "Our Story", external: true },
 ];
 

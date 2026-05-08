@@ -7,10 +7,6 @@ import Footer from "./components/Footer";
 const IMG = {
   heroSlider:
     "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2024/04/TDM-Fish-HOMEPAGE-SLIDER-1200x900-1023.png?fit=1200%2C900&ssl=1",
-  heroMain:
-    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2026/01/IMG_3249.png?fit=1536%2C775&ssl=1",
-  fishTacos:
-    "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2021/02/Fish-Tacos_2-small.png?fit=1200%2C900&ssl=1",
   fishTacos2:
     "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/02/Fish-Tacos.png",
   story:
@@ -43,7 +39,6 @@ const IMG = {
     "https://i0.wp.com/tacodelmar.com/wp-content/uploads/2020/02/snack-time-square-1.png",
 };
 
-/* ── Shared wave divider ── */
 function WaveDivider({ fill }: { fill: string }) {
   return (
     <svg
@@ -65,88 +60,31 @@ function WaveDivider({ fill }: { fill: string }) {
   );
 }
 
-/* ── Data ── */
 const categories = [
-  {
-    emoji: "🌮",
-    name: "Tacos",
-    desc: "Uno, dos, tres, más?",
-    id: "tacos",
-    img: IMG.tacos,
-    tint: "bg-tdm-orange/40",
-  },
-  {
-    emoji: "🌯",
-    name: "Burritos",
-    desc: "Roll a Fat One!",
-    id: "burritos",
-    img: IMG.burrito,
-    tint: "bg-tdm-teal/40",
-  },
-  {
-    emoji: "🥣",
-    name: "Burrito Bowls",
-    desc: "Pack a Bowl!",
-    id: "burrito-bowls",
-    img: IMG.bowl,
-    tint: "bg-yellow-600/40",
-  },
-  {
-    emoji: "🥗",
-    name: "Taco Salads",
-    desc: "Crispy baked shell",
-    id: "taco-salads",
-    img: IMG.salad,
-    tint: "bg-tdm-green/40",
-  },
-  {
-    emoji: "🧀",
-    name: "Nachos",
-    desc: "Loaded with flavor",
-    id: "nachos",
-    img: IMG.nachos,
-    tint: "bg-tdm-red/40",
-  },
-  {
-    emoji: "🫔",
-    name: "Enchiladas",
-    desc: "Smothered in goodness",
-    id: "enchiladas",
-    img: IMG.enchiladas,
-    tint: "bg-tdm-teal-dark/40",
-  },
-  {
-    emoji: "🫓",
-    name: "Quesadillas",
-    desc: "Grilled & golden",
-    id: "quesadillas",
-    img: IMG.quesadilla,
-    tint: "bg-amber-600/40",
-  },
-  {
-    emoji: "🍟",
-    name: "Snacks & Sides",
-    desc: "Little bites, big flavor",
-    id: "snacks",
-    img: IMG.snack,
-    tint: "bg-purple-700/40",
-  },
+  { name: "Tacos",        desc: "Uno, dos, tres, más?",    id: "tacos",        img: IMG.tacos,       tint: "bg-tdm-orange/40" },
+  { name: "Burritos",     desc: "Roll a Fat One!",         id: "burritos",     img: IMG.burrito,     tint: "bg-tdm-teal/40" },
+  { name: "Burrito Bowls",desc: "Pack a Bowl!",            id: "burrito-bowls",img: IMG.bowl,        tint: "bg-yellow-600/40" },
+  { name: "Taco Salads",  desc: "Crispy baked shell",      id: "taco-salads",  img: IMG.salad,       tint: "bg-tdm-green/40" },
+  { name: "Nachos",       desc: "Loaded with flavor",      id: "nachos",       img: IMG.nachos,      tint: "bg-tdm-red/40" },
+  { name: "Enchiladas",   desc: "Smothered in goodness",   id: "enchiladas",   img: IMG.enchiladas,  tint: "bg-tdm-teal-dark/40" },
+  { name: "Quesadillas",  desc: "Grilled & golden",        id: "quesadillas",  img: IMG.quesadilla,  tint: "bg-amber-600/40" },
+  { name: "Snacks & Sides",desc:"Little bites, big flavor",id: "snacks",       img: IMG.snack,       tint: "bg-purple-700/40" },
 ];
 
 const popularItems = [
   {
     name: "Rippin' Fish Taco",
     desc: "Crispy baked cod, cabbage, pico de gallo & Baja white sauce",
-    badge: "🔥 Fan Fave",
+    badge: "Fan Favorite",
     badgeBg: "bg-tdm-orange",
-    img: IMG.fishTacos,
+    img: IMG.tacos,
     gradientFrom: "from-tdm-teal",
     gradientTo: "to-tdm-teal-dark",
   },
   {
     name: "Mission Burrito",
     desc: "Rice, beans, coastal filling, cheese & pico de gallo",
-    badge: "⭐ Most Popular",
+    badge: "Most Popular",
     badgeBg: "bg-tdm-yellow text-tdm-dark",
     img: IMG.burrito,
     gradientFrom: "from-tdm-orange",
@@ -155,7 +93,7 @@ const popularItems = [
   {
     name: "Burrito Bowl",
     desc: "All the flavor, none of the tortilla — fully customizable",
-    badge: "💪 Keto Friendly",
+    badge: "Keto Friendly",
     badgeBg: "bg-tdm-green",
     img: IMG.bowl,
     gradientFrom: "from-tdm-green",
@@ -164,7 +102,7 @@ const popularItems = [
   {
     name: "Loaded Nachos",
     desc: "Chips, melted cheese, rice, beans, protein & your choice of salsa",
-    badge: "🎉 Share it",
+    badge: "Great to Share",
     badgeBg: "bg-tdm-red",
     img: IMG.nachos,
     gradientFrom: "from-tdm-red",
@@ -173,7 +111,7 @@ const popularItems = [
   {
     name: "Taco Salad",
     desc: "Crispy in-house baked shell loaded with rice, beans & toppings",
-    badge: "✅ Fresh & Crispy",
+    badge: "Fresh & Crispy",
     badgeBg: "bg-tdm-green",
     img: IMG.salad,
     gradientFrom: "from-amber-500",
@@ -185,15 +123,32 @@ const stats = [
   { num: "30+", label: "Years of flavor" },
   { num: "100%", label: "Fresh daily" },
   { num: "7", label: "Protein options" },
-  { num: "∞", label: "Customizations" },
+  { num: "Endless", label: "Customizations" },
+];
+
+const storyBadges = [
+  "Beach-Inspired",
+  "Fresh Daily",
+  "Made Your Way",
+  "Bold Flavor",
 ];
 
 const rewardsBenefits = [
-  "✅ Earn points on every order",
-  "🎁 Redeem for free food",
-  "📱 Exclusive app-only deals",
-  "🔔 First to know about new items",
-  "🌮 Daily specials — Get Hooked Up!",
+  "Earn points on every order",
+  "Redeem for free food",
+  "Exclusive app-only deals",
+  "First to know about new items",
+  "Daily specials — Get Hooked Up!",
+];
+
+const dietBadges = [
+  { label: "Keto",        bg: "bg-red-100 text-red-700 border-red-200" },
+  { label: "Vegetarian",  bg: "bg-green-100 text-green-700 border-green-200" },
+  { label: "Vegan",       bg: "bg-emerald-100 text-emerald-700 border-emerald-200" },
+  { label: "Paleo",       bg: "bg-amber-100 text-amber-700 border-amber-200" },
+  { label: "Gluten-Free", bg: "bg-blue-100 text-blue-700 border-blue-200" },
+  { label: "Low-Carb",    bg: "bg-teal-100 text-teal-700 border-teal-200" },
+  { label: "Plant-Based", bg: "bg-lime-100 text-lime-700 border-lime-200" },
 ];
 
 export default function HomePage() {
@@ -201,23 +156,20 @@ export default function HomePage() {
     <>
       <Header />
       <main className="flex-1">
+
         {/* ═══════════════════════════════════════
-            HERO — split with real food photo
+            HERO
         ═══════════════════════════════════════ */}
         <section className="relative min-h-screen flex items-center overflow-hidden bg-tdm-teal pt-16">
           <div className="absolute inset-0 bg-dots pointer-events-none" />
-
-          {/* Floating decorations (mobile only — desktop has real photo) */}
-          <span className="lg:hidden absolute top-24 right-4 text-7xl animate-float select-none pointer-events-none opacity-70" aria-hidden="true">🌮</span>
-          <span className="lg:hidden absolute bottom-28 right-1/4 text-4xl animate-float-slow select-none pointer-events-none opacity-55" aria-hidden="true">🌶️</span>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
               {/* Left: text + CTAs */}
               <div>
-                <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 animate-pulse-badge shadow-md">
-                  🆕 NEW Rippin&apos; Fish — juicier &amp; crispier than ever!
+                <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 shadow-md">
+                  NEW — Rippin&apos; Fish: juicier &amp; crispier than ever!
                 </div>
                 <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-white leading-tight mb-6">
                   Born on
@@ -237,7 +189,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="bg-tdm-orange hover:bg-tdm-orange-dark text-white font-bold font-sans px-8 py-4 rounded-full text-lg btn-pop shadow-2xl"
                   >
-                    Order Now 🌮
+                    Order Now
                   </a>
                   <Link
                     href="/menu"
@@ -246,6 +198,8 @@ export default function HomePage() {
                     View Menu →
                   </Link>
                 </div>
+
+                {/* Stats strip */}
                 <div className="flex flex-wrap gap-8 mt-14">
                   {stats.map((s) => (
                     <div key={s.num}>
@@ -258,7 +212,6 @@ export default function HomePage() {
 
               {/* Right: real food photo */}
               <div className="hidden lg:block relative">
-                {/* Main photo frame */}
                 <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500">
                   <img
                     src={IMG.heroSlider}
@@ -268,19 +221,12 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-tdm-teal/50 to-transparent" />
                 </div>
 
-                {/* Floating badge — top right */}
+                {/* "Made Fresh" badge */}
                 <div className="absolute -top-5 -right-5 z-20 bg-tdm-yellow text-tdm-dark rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-xl text-center">
-                  <span className="text-2xl">🌮</span>
-                  <span className="font-display text-xs leading-tight">Made<br />Fresh!</span>
+                  <span className="font-display text-sm leading-tight px-2">Made Fresh!</span>
                 </div>
 
-                {/* Floating badge — bottom left */}
-                <div className="absolute -bottom-5 -left-5 z-20 bg-tdm-orange text-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-xl text-center">
-                  <span className="text-xl">🔥</span>
-                  <span className="font-display text-[10px] leading-tight">Order<br />Now</span>
-                </div>
-
-                {/* Secondary smaller photo */}
+                {/* Ingredients inset */}
                 <div className="absolute -bottom-8 right-8 z-0 w-36 h-36 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/30 transform -rotate-3">
                   <img
                     src={IMG.ingredients}
@@ -292,14 +238,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Torn bottom */}
           <div className="absolute bottom-0 left-0 right-0 z-10">
             <WaveDivider fill="#FFFDF5" />
           </div>
         </section>
 
         {/* ═══════════════════════════════════════
-            CATEGORIES — real food photography
+            CATEGORIES
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-cream py-24 px-4">
           <div className="max-w-7xl mx-auto">
@@ -311,8 +256,8 @@ export default function HomePage() {
                 What are you feeling?
               </h2>
               <p className="text-tdm-muted font-sans text-lg max-w-2xl mx-auto">
-                From tacos to bowls to loaded nachos — build it your way with your
-                choice of coastal filling.
+                From tacos to bowls to loaded nachos — build it your way with
+                your choice of coastal filling.
               </p>
             </div>
 
@@ -323,23 +268,17 @@ export default function HomePage() {
                   href={`/menu#${cat.id}`}
                   className="relative rounded-3xl overflow-hidden h-52 sm:h-56 card-lift group block"
                 >
-                  {/* Food photo */}
                   <img
                     src={cat.img}
                     alt={cat.name}
                     className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                   />
-                  {/* Dark gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                  {/* Brand color tint */}
                   <div className={`absolute inset-0 ${cat.tint}`} />
-                  {/* Text */}
                   <div className="absolute bottom-0 left-0 p-4 text-white">
-                    <div className="text-3xl mb-1">{cat.emoji}</div>
                     <h3 className="font-display text-xl leading-tight">{cat.name}</h3>
                     <p className="text-white/75 text-xs font-sans mt-0.5">{cat.desc}</p>
                   </div>
-                  {/* Arrow on hover */}
                   <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white font-bold text-sm">
                     →
                   </div>
@@ -350,7 +289,7 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            BRAND STORY — with real story image
+            BRAND STORY
         ═══════════════════════════════════════ */}
         <section className="relative bg-tdm-teal py-28 px-4 overflow-hidden">
           <div className="absolute top-0 left-0 right-0 z-10 rotate-180">
@@ -360,7 +299,6 @@ export default function HomePage() {
 
           <div className="relative max-w-7xl mx-auto z-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-              {/* Text */}
               <div>
                 <span className="inline-block bg-tdm-yellow text-tdm-dark text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-6">
                   Our Story
@@ -379,8 +317,11 @@ export default function HomePage() {
                   customizable with your choice of protein, salsa, and toppings.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  {["🌊 Beach-Inspired", "🌿 Fresh Daily", "💚 Made Your Way", "🌶️ Bold Flavor"].map((badge) => (
-                    <span key={badge} className="bg-white/15 border border-white/30 text-white text-sm font-bold font-sans px-4 py-2 rounded-full">
+                  {storyBadges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="bg-white/15 border border-white/30 text-white text-sm font-bold font-sans px-4 py-2 rounded-full"
+                    >
                       {badge}
                     </span>
                   ))}
@@ -395,20 +336,18 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Real story image */}
               <div className="relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
                   <img
                     src={IMG.story}
-                    alt="Taco Del Mar Story — Baja beach vibes"
+                    alt="Taco Del Mar — Baja beach vibes"
                     className="w-full h-[420px] object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-tdm-teal-dark/50 to-transparent" />
                   <div className="absolute bottom-5 left-5 text-white">
-                    <span className="font-display text-2xl drop-shadow-lg">Born on the Beach 🌊</span>
+                    <span className="font-display text-2xl drop-shadow-lg">Born on the Beach</span>
                   </div>
                 </div>
-                {/* Our story block inset */}
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/30 transform rotate-3">
                   <img
                     src={IMG.storyBlock}
@@ -426,7 +365,7 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            POPULAR ITEMS — real food photos
+            POPULAR ITEMS
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-cream py-24 px-4">
           <div className="max-w-7xl mx-auto">
@@ -445,14 +384,12 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Horizontal scroll cards with real photos */}
             <div className="flex gap-5 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4">
               {popularItems.map((item) => (
                 <div
                   key={item.name}
                   className="rounded-3xl overflow-hidden min-w-[280px] max-w-[300px] flex-shrink-0 card-lift shadow-lg"
                 >
-                  {/* Food photo */}
                   <div className="relative h-48">
                     <img
                       src={item.img}
@@ -464,8 +401,6 @@ export default function HomePage() {
                       {item.badge}
                     </span>
                   </div>
-
-                  {/* Content */}
                   <div className={`bg-gradient-to-br ${item.gradientFrom} ${item.gradientTo} p-5 text-white relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
                     <div className="relative">
@@ -497,16 +432,11 @@ export default function HomePage() {
               Every item is fully customizable to fit your lifestyle.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { label: "🥩 Keto", bg: "bg-red-100 text-red-700 border-red-200" },
-                { label: "🌿 Vegetarian", bg: "bg-green-100 text-green-700 border-green-200" },
-                { label: "🌱 Vegan", bg: "bg-emerald-100 text-emerald-700 border-emerald-200" },
-                { label: "🪨 Paleo", bg: "bg-amber-100 text-amber-700 border-amber-200" },
-                { label: "✅ Gluten-Free", bg: "bg-blue-100 text-blue-700 border-blue-200" },
-                { label: "🥗 Low-Carb", bg: "bg-teal-100 text-teal-700 border-teal-200" },
-                { label: "🌿 Plant-Based", bg: "bg-lime-100 text-lime-700 border-lime-200" },
-              ].map((d) => (
-                <span key={d.label} className={`${d.bg} border text-sm font-bold font-sans px-5 py-2.5 rounded-full`}>
+              {dietBadges.map((d) => (
+                <span
+                  key={d.label}
+                  className={`${d.bg} border text-sm font-bold font-sans px-5 py-2.5 rounded-full`}
+                >
                   {d.label}
                 </span>
               ))}
@@ -519,16 +449,13 @@ export default function HomePage() {
         ═══════════════════════════════════════ */}
         <section className="relative bg-tdm-orange py-28 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-          {/* Real food photo as background fade */}
           <div className="absolute inset-0 opacity-10 overflow-hidden">
             <img src={IMG.fishTacos2} alt="" className="w-full h-full object-cover" aria-hidden="true" />
           </div>
-          <span className="absolute -right-10 top-1/2 -translate-y-1/2 text-[220px] opacity-10 select-none pointer-events-none" aria-hidden="true">🌮</span>
-          <span className="absolute -left-10 top-1/2 -translate-y-1/2 text-[160px] opacity-10 select-none pointer-events-none -rotate-12" aria-hidden="true">🌯</span>
 
           <div className="relative max-w-4xl mx-auto text-center z-10">
             <div className="inline-block bg-white/20 border border-white/30 text-white text-sm font-bold font-sans px-4 py-2 rounded-full mb-7">
-              🔥 Ready in minutes
+              Ready in minutes
             </div>
             <h2 className="font-display text-6xl md:text-7xl text-white mb-6">Ready for tacos?</h2>
             <p className="text-white/85 font-sans text-xl mb-10 max-w-xl mx-auto">
@@ -541,7 +468,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="bg-white text-tdm-orange font-bold font-sans px-10 py-4 rounded-full text-xl btn-pop shadow-2xl"
               >
-                Order Online Now 🌮
+                Order Online Now
               </a>
               <Link
                 href="/menu"
@@ -554,7 +481,7 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            REWARDS — with real phone image
+            REWARDS
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-yellow py-24 px-4">
           <div className="max-w-7xl mx-auto">
@@ -564,7 +491,7 @@ export default function HomePage() {
                   Loyalty Program
                 </span>
                 <h2 className="font-display text-5xl md:text-6xl text-tdm-dark mb-6">
-                  Rippin&apos; Rewards 🏄
+                  Rippin&apos; Rewards
                 </h2>
                 <p className="text-tdm-charcoal font-sans text-lg leading-relaxed mb-8">
                   Earn points every time you order. Redeem them for free food. Get
@@ -572,7 +499,10 @@ export default function HomePage() {
                 </p>
                 <ul className="space-y-2 mb-8">
                   {rewardsBenefits.map((item) => (
-                    <li key={item} className="text-tdm-charcoal font-sans">{item}</li>
+                    <li key={item} className="text-tdm-charcoal font-sans flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-tdm-teal flex-shrink-0" />
+                      {item}
+                    </li>
                   ))}
                 </ul>
                 <a
@@ -581,11 +511,10 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-block bg-tdm-dark text-white font-bold font-sans px-8 py-4 rounded-full btn-pop shadow-lg"
                 >
-                  Get Hooked Up! 🎉
+                  Get Hooked Up!
                 </a>
               </div>
 
-              {/* Real rewards image */}
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden shadow-2xl">
                   <img
@@ -594,8 +523,8 @@ export default function HomePage() {
                     className="w-full object-cover"
                   />
                 </div>
-                <div className="absolute -top-4 -left-4 bg-tdm-dark text-white rounded-2xl px-4 py-3 shadow-xl font-display text-sm">
-                  🏆 Earn on every order
+                <div className="absolute -top-4 -left-4 bg-tdm-dark text-white rounded-2xl px-4 py-3 shadow-xl font-sans text-sm font-bold">
+                  Earn on every order
                 </div>
               </div>
             </div>
@@ -603,14 +532,13 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            CATERING — with real catering images
+            CATERING
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-cream py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="bg-gradient-to-r from-tdm-teal to-tdm-teal-dark rounded-3xl overflow-hidden relative shadow-xl">
               <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
               <div className="grid grid-cols-1 md:grid-cols-5 items-center">
-                {/* Text + CTAs */}
                 <div className="md:col-span-3 p-10 md:p-14 relative z-10">
                   <span className="inline-block bg-tdm-yellow text-tdm-dark text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-4">
                     Catering
@@ -635,12 +563,10 @@ export default function HomePage() {
                       rel="noopener noreferrer"
                       className="bg-tdm-orange text-white font-bold font-sans px-7 py-3 rounded-full btn-pop text-center"
                     >
-                      Order Meal Kits 🌮
+                      Order Meal Kits
                     </a>
                   </div>
                 </div>
-
-                {/* Catering images */}
                 <div className="md:col-span-2 flex gap-2 p-4 md:pr-6">
                   <img
                     src={IMG.catering}
@@ -663,7 +589,6 @@ export default function HomePage() {
         ═══════════════════════════════════════ */}
         <section className="bg-tdm-sand py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="text-5xl mb-5">📍</div>
             <h2 className="font-display text-5xl md:text-6xl text-tdm-dark mb-4">
               Find Your<br />Taco Del Mar
             </h2>
@@ -700,6 +625,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>

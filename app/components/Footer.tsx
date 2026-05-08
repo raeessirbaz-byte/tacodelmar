@@ -76,7 +76,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-tdm-teal hover:bg-tdm-teal-dark text-white text-sm font-bold font-sans px-4 py-2.5 rounded-full transition-colors btn-pop"
             >
-              🏄 Get the Rippin' Rewards App
+              Get the Rippin' Rewards App
             </a>
           </div>
 
