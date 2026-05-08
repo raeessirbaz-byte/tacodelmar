@@ -167,12 +167,11 @@ export default function HomePage() {
             alt="Taco Del Mar fish taco"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Dark teal overlay for readability */}
-          <div className="absolute inset-0 bg-tdm-teal/70" />
-          <div className="absolute inset-0 bg-dots pointer-events-none" />
+          {/* Subtle bottom gradient so text above wave stays readable */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
 
           {/* Center-aligned content */}
-          <div className="relative w-full z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 py-24">
+          <div className="relative w-full z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 py-24" style={{textShadow: "0 2px 12px rgba(0,0,0,0.5)"}}>
             <div className="inline-flex items-center gap-2 bg-tdm-yellow text-tdm-dark px-4 py-2 rounded-full text-sm font-bold font-sans mb-7 shadow-md">
               NEW — Rippin&apos; Fish: juicier &amp; crispier than ever!
             </div>
