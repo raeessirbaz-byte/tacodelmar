@@ -304,16 +304,16 @@ export default function MenuPage() {
           <div className="absolute inset-0 bg-dots opacity-15 pointer-events-none" />
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl mx-auto text-center">
               {/* Text */}
-              <div>
+              <div className="flex flex-col items-center">
                 <span className="inline-block bg-tdm-orange text-white text-xs font-bold font-sans uppercase tracking-widest px-4 py-2 rounded-full mb-6">
                   Fresh &amp; Delicious
                 </span>
                 <h1 className="font-display text-7xl sm:text-8xl text-white mb-6 leading-tight">
                   The Menu
                 </h1>
-                <p className="text-white/75 font-sans text-xl max-w-lg mb-10">
+                <p className="text-white/75 font-sans text-xl mb-10 max-w-lg">
                   Made your way, every time. Choose your base, pick your coastal
                   filling, and load it up with fresh toppings.
                 </p>
@@ -325,21 +325,6 @@ export default function MenuPage() {
                 >
                   Order Online →
                 </a>
-              </div>
-
-              {/* Hero food photo */}
-              <div className="hidden lg:block relative">
-                <div className="rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/15 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <img
-                    src={FOOD_IMG.hero}
-                    alt="Rippin' Fish Tacos"
-                    className="w-full h-[340px] object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-tdm-dark/40 to-transparent" />
-                </div>
-                <div className="absolute -top-4 -right-4 bg-tdm-orange text-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-xl text-center font-display text-xs">
-                  <span>Fan Fave</span>
-                </div>
               </div>
             </div>
           </div>
